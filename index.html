@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>切图工具</title>
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+    <!-- ico -->
+    <div class="ico-box">
+        <div class="ico-box-item iconfont icon-huabi" title="画笔" id="pen">
+        </div>
+        <div class="ico-box-item iconfont icon-fangda" title="放大" id="amplify">
+        </div>
+        <div class="ico-box-item iconfont icon-suoxiao" title="缩小" id="reduce">
+        </div>
+        <div class="ico-box-item iconfont icon-yidong" title="移动" id="move">
+        </div>
+        <div class="ico-box-item iconfont icon-xingzhuang-juxing" title="正方形" id="pen">
+        </div>
+        <div class="ico-box-item iconfont icon-xingzhuang-tuoyuanxing" title="圆" id="pen">
+        </div>
+        <div class="ico-box-item iconfont icon-xingzhuang-sanjiaoxing" title="三角形" id="pen">
+        </div>
+        <div class="ico-box-item iconfont icon-chehui" title="撤回" id="revokeCanvas">
+        </div>
+        <div class="ico-box-item iconfont icon-huifu" title="恢复" id="recoverCanvas">
+        </div>
+        <div class="ico-box-item iconfont icon-baocun" title="选中调整" id="normal">
+        </div>
+        <div class="ico-box-item iconfont icon-baocun" title="保存">
+        </div>
+
+    </div>
+    <div id="app"></div>
+
+    <script src="./lib/index.js"></script>
+    <script>
+        const scene = new Two.drawiBoardBagua({ width: 800, height: 600 })
+
+        const rect = scene.Rect({
+            x: 200,
+            y: 200,
+            width: 200,
+            height: 200
+        })
+        const modelList = ['pen', 'normal']
+        const utilBox = document.getElementsByClassName('ico-box')[0]
+        utilBox.addEventListener('click', (e) => {
+            if (!e.target) return false
+            const name = e.target.id
+            if (modelList.indexOf(name) >= 0) {
+                scene.setModel(name)
+            } else {
+                scene[name]()
+            }
+        })
+        const app = document.querySelector('#app')
+        window.scene = scene
+        app.appendChild(scene.domElement)
+    </script>
+
+</body>
+
+</html>
