@@ -1,0 +1,35 @@
+export default class {
+    private scene;
+    private ctx;
+    private textDom;
+    private cursor;
+    private time;
+    private addcanvasMousedown;
+    private mouseupfN;
+    private keyDownFn;
+    private keyUpFn;
+    private inputFn;
+    size: number;
+    private textOb;
+    cursorLength: number;
+    private moveCursorStatus;
+    private textList;
+    private textRow;
+    private lineHeight;
+    constructor(scene: any);
+    open(): void;
+    canvasMouseup(): void;
+    canvasMousedown(e: MouseEvent): void;
+    input(): void;
+    close(): void;
+    animation(): void;
+    keyDown(e: any): void;
+    keyUp(e: any): void;
+    initText(e: MouseEvent): void;
+    initCursor(e: MouseEvent): void;
+    initEvent(): void;
+    recountLength(text: string): void;
+    getTextHeight(size: number): number;
+    getTextWidth(text: string, size: number): number;
+    resetText(): void;
+}
