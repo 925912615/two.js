@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.ico-box {
+    width: 60%;
+    height: 50px;
+    background-color: beige;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 999;
+    top: 0;
+    margin: auto;
+}
+
+.iconfont {
+    font-size: 20px;
+
+}
+
+.ico-box-item {
+    width: 50px;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ico-box-item:hover {
+
+    cursor: pointer;
+    background-color: aliceblue;
+
+}
+
+#app {
+    display: flex;
+    margin: 0 auto;
+}
+
+#app canvas {
+    transform-origin: 0 0;
+    margin: auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .27), 0 0 20px rgb(108 117 125) inset;
+    background-color: #f8f9fa !important;
+    overflow: hidden;
+}
+
+#app #bagua {
+    box-shadow: 0 0 5px rgba(0, 0, 0, .27), 0 0 20px rgb(108 117 125) inset;
+    position: absolute;
+    left: 50%;
+    top: 660px;
+    transform: translateX(-50%);
+}
+
+body {
+    background-color: #6c757d;
+}
