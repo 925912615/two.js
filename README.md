@@ -2,7 +2,7 @@
 
 画板，切图
 
-预览地址： https://github.com/925912615/two.js
+预览地址： https://925912615.github.io/two.js/
 
 现有功能雏形：
 1.事件控制系统
