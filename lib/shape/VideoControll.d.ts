@@ -1,0 +1,30 @@
+import { Props } from "src/types/shape";
+import Base from "./Base";
+import videoFrame from "./VideoFrame";
+import ImageFrame from "./ImageFrame";
+export default class extends Base {
+    parent: videoFrame;
+    video: HTMLVideoElement;
+    duration: string;
+    playIcon: ImageFrame;
+    volumeIcon: ImageFrame;
+    fullScreenIcon: ImageFrame;
+    downloadIcon: ImageFrame;
+    playImage: HTMLImageElement;
+    volumeImage: HTMLImageElement;
+    fullScreenImage: HTMLImageElement;
+    pauseImage: HTMLImageElement;
+    muteImage: HTMLImageElement;
+    downloadImage: HTMLImageElement;
+    play: boolean;
+    volume: boolean;
+    readonly iconSize: number;
+    constructor(option: Props, parent: videoFrame, video: HTMLVideoElement);
+    getResources(): void;
+    handleEvent(): void;
+    updateIcon(): void;
+    getFrame(): ImageFrame[];
+    toTime(seconds: number): string;
+    draw(ctx: CanvasRenderingContext2D, osCtx: OffscreenCanvasRenderingContext2D): void;
+    drawMirror(osCtx: CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D): void;
+}

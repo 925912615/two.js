@@ -1,11 +1,7 @@
 import Base from "./Base";
-interface RectProps {
-    size: number;
-    textList: Array<string>;
-    lineHeight: number;
-}
+import { Props } from "src/types/shape";
 export default class extends Base {
-    constructor(option: RectProps);
+    constructor(option: Props);
     draw(ctx: CanvasRenderingContext2D, osCtx: OffscreenCanvasRenderingContext2D): void;
+    setProps(option: Props): void;
 }
-export {};

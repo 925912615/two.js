@@ -1,6 +1,9 @@
+import { shapeType_ } from "./drawBoard";
 export interface Shape {
     props: Props;
     actived: boolean;
+    selectable: boolean;
+    type: shapeType_;
     draw(ctx: CanvasRenderingContext2D, osCtx: OffscreenCanvasRenderingContext2D): void;
     on(name: string, listener: Listener): void;
     getListeners(): {
@@ -22,6 +25,7 @@ export declare enum EventNames {
 }
 export declare class Props {
     id: string;
+    name: string;
     width: number;
     height: number;
     x: number;
@@ -37,8 +41,18 @@ export declare class Props {
     rotation: number;
     size: number;
     textList: Array<string>;
+    textObj: Array<any>;
     lineHeight: number;
     lineWidth: number;
     lateX: number;
     lateY: number;
+    radius: number;
+    clientX: number;
+    clientY: number;
+    shapes: Shape[];
+    shadowColor: string;
+    shadowBlur: number;
+    textBaseline: CanvasTextBaseline;
+    opacity: number;
+    textAlign: CanvasTextAlign;
 }

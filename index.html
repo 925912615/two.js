@@ -7,56 +7,116 @@
     <meta name="viewport"
         content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>切图工具</title>
-    <link rel="stylesheet" href="./css/iconfont.css">
     <link rel="stylesheet" href="./css/index.css">
-
 </head>
 
 <body>
     <!-- ico -->
-    <div class="ico-box">
-        <div class="ico-box-item iconfont icon-huabi" title="画笔" id="pen">
-        </div>
-        <div class="ico-box-item iconfont icon-fangda" title="放大" id="amplify">
-        </div>
-        <div class="ico-box-item iconfont icon-suoxiao" title="缩小" id="reduce">
-        </div>
-        <div class="ico-box-item iconfont icon-yidong" title="移动" id="move">
-        </div>
-        <div class="ico-box-item iconfont icon-xingzhuang-juxing" title="正方形" id="pen">
-        </div>
-        <div class="ico-box-item iconfont icon-xingzhuang-tuoyuanxing" title="圆" id="pen">
-        </div>
-        <div class="ico-box-item iconfont icon-xingzhuang-sanjiaoxing" title="三角形" id="pen">
-        </div>
-        <div class="ico-box-item iconfont icon-chehui" title="撤回" id="revokeCanvas">
-        </div>
-        <div class="ico-box-item iconfont icon-huifu" title="恢复" id="recoverCanvas">
-        </div>
-        <div class="ico-box-item iconfont icon-baocun" title="选中调整" id="normal">
-        </div>
-        <div class="ico-box-item iconfont icon-baocun" title="保存">
-        </div>
-dsd
+    <ui class="ico-box">
+        <li class="ico-box-item"><img src="./svg/huabi.svg" title="画笔" id="pen"></li>
+        <li class="ico-box-item"><img src="./svg/fangda.svg" title="放大" id="amplify"></li>
+        <li class="ico-box-item"><img src="./svg/suoxiao.svg" title="缩小" id="reduce"></li>
+        <li class="ico-box-item"><img src="./svg/move.svg" title="移动" id="move"></li>
+        <li class="ico-box-item"><img src="./svg/xingzhuang-juxing.svg" title="正方形" id="Rect"></li>
+        <li class="ico-box-item"><img src="./svg/xingzhuang-tuoyuanxing.svg" title="圆" id="Arc"></li>
+        <li class="ico-box-item"><img src="./svg/xingzhuang-sanjiaoxing.svg" title="三角形" id="Triangle"></li>
+        <li class="ico-box-item"><img src="./svg/chehui.svg" title="撤回" id="revokeCanvas"></li>
+        <li class="ico-box-item"><img src="./svg/huifu.svg" title="恢复" id="recoverCanvas"></li>
+        <li class="ico-box-item"><img src="./svg/wenben.svg" title="文本" id="textarea"></li>
+        <li class="ico-box-item"><img src="./svg/zhuashou-01.svg" title="选中调整" id="normal"></li>
+    </ui>
+    <div id="app">
+        <h3>ppt预览：</h3>
     </div>
-    <div id="app"></div>
+
+    <script>
+        const json = `{"width":800,"height":500,"shapes":[{"id":"106-32-184-255","type":"other","props":{"id":"106-32-184-255","width":0,"height":0,"x":0,"y":0,"bgcolor":"black","borderWidth":1,"borderColor":"black","fontSize":"12px","textColor":"black","text":"","scaleX":1,"scaleY":1,"rotation":0,"size":10,"textList":[],"lineHeight":0,"lineWidth":0,"lateX":0,"lateY":0,"radius":5,"isGroup":false,"shapes":[]}},{"id":"49-14-22-255","type":"Rect","props":{"id":"49-14-22-255","width":100,"height":200,"x":200,"y":200,"bgcolor":"black","borderWidth":1,"borderColor":"black","fontSize":"12px","textColor":"black","text":"","scaleX":1,"scaleY":1,"rotation":0,"size":10,"textList":[],"lineHeight":0,"lineWidth":0,"lateX":0,"lateY":0,"radius":5,"isGroup":false,"shapes":[]}},{"id":"74-94-161-255","type":"Triangle","props":{"id":"74-94-161-255","width":200,"height":200,"x":200,"y":300,"bgcolor":"black","borderWidth":1,"borderColor":"black","fontSize":"12px","textColor":"black","text":"","scaleX":1,"scaleY":1,"rotation":0,"size":10,"textList":[],"lineHeight":0,"lineWidth":0,"lateX":0,"lateY":0,"radius":5,"isGroup":false,"shapes":[]}},{"id":"53-156-19-255","type":"Arrow","props":{"id":"53-156-19-255","width":200,"height":50,"x":200,"y":400,"bgcolor":"black","borderWidth":1,"borderColor":"black","fontSize":"12px","textColor":"black","text":"","scaleX":1,"scaleY":1,"rotation":0,"size":10,"textList":[],"lineHeight":0,"lineWidth":0,"lateX":0,"lateY":0,"radius":5,"isGroup":false,"shapes":[]}},{"id":"152-97-149-255","type":"Arc","props":{"id":"152-97-149-255","width":100,"height":100,"x":400,"y":400,"bgcolor":"black","borderWidth":1,"borderColor":"black","fontSize":"12px","textColor":"black","text":"","scaleX":1,"scaleY":1,"rotation":0,"size":10,"textList":[],"lineHeight":0,"lineWidth":0,"lateX":0,"lateY":0,"radius":50,"isGroup":false,"shapes":[]}},{"id":"242-39-91-255","type":"Pentagram","props":{"id":"242-39-91-255","width":100,"height":100,"x":500,"y":500,"bgcolor":"black","borderWidth":1,"borderColor":"black","fontSize":"12px","textColor":"black","text":"","scaleX":1,"scaleY":1,"rotation":0,"size":10,"textList":[],"lineHeight":0,"lineWidth":0,"lateX":0,"lateY":0,"radius":50,"isGroup":false,"shapes":[]}},{"id":"149-210-110-255","type":"Group","props":{"id":"149-210-110-255","width":300,"height":300,"x":450,"y":200,"bgcolor":"black","borderWidth":1,"borderColor":"black","fontSize":"12px","textColor":"black","text":"","scaleX":1,"scaleY":1,"rotation":0,"size":10,"textList":[],"lineHeight":0,"lineWidth":0,"lateX":0,"lateY":0,"radius":5,"isGroup":false,"shapes":[{"id":"136-92-110-255","listeners":{},"type":"Arrow","props":{"id":"136-92-110-255","width":200,"height":50,"x":250,"y":100,"bgcolor":"red","borderWidth":1,"borderColor":"black","fontSize":"12px","textColor":"black","text":"","scaleX":1,"scaleY":1,"rotation":0,"size":10,"textList":[],"lineHeight":0,"lineWidth":0,"lateX":0,"lateY":0,"radius":5,"isGroup":false,"shapes":[]},"actived":false},{"id":"79-53-177-255","listeners":{},"type":"Arc","props":{"id":"79-53-177-255","width":100,"height":100,"x":200,"y":200,"bgcolor":"blue","borderWidth":1,"borderColor":"black","fontSize":"12px","textColor":"black","text":"","scaleX":1,"scaleY":1,"rotation":0,"size":10,"textList":[],"lineHeight":0,"lineWidth":0,"lateX":0,"lateY":0,"radius":50,"isGroup":false,"shapes":[]},"actived":false},{"id":"182-16-190-255","listeners":{},"type":"Pentagram","props":{"id":"182-16-190-255","width":100,"height":100,"x":50,"y":50,"bgcolor":"black","borderWidth":1,"borderColor":"black","fontSize":"12px","textColor":"black","text":"","scaleX":1,"scaleY":1,"rotation":0,"size":10,"textList":[],"lineHeight":0,"lineWidth":0,"lateX":0,"lateY":0,"radius":50,"isGroup":false,"shapes":[]},"actived":false}]}}]}`
+    </script>
 
     <script src="./lib/two.js"></script>
     <script>
-        const scene = new Two.drawiBoardBagua({ width: 800, height: 600 })
+        window.onload = () => {
+            const app = document.querySelector('#app')
 
-        const rect = scene.Rect({
-            x: 200,
-            y: 200,
-            width: 200,
-            height: 200
-        })
-        const modelList = ['pen', 'normal']
+            const ppt = new Two.PPTControl(document.createElement('canvas'), { width: 800, height: 500 })
+
+            // 单个场景
+            const scene = new Two.drawiBoardBagua(document.createElement('canvas'), { width: 800, height: 600 })
+            scene.import(JSON.parse(json))
+
+            window.ppt = ppt
+            window.scene = scene
+            app.prepend(scene.domElement)
+            app.appendChild(ppt.canvasPre)
+
+            // 操作栏
+            const modelList = ['pen', 'normal', 'textarea']
+            const utilBox = document.getElementsByClassName('ico-box')[0]
+            utilBox.addEventListener('click', (e) => {
+                if (!e.target) return false
+                const name = e.target.id
+
+                if (name == 'pen') {
+                    scene.setCanvasCursor('./svg/pen.svg')
+                } else if (['Rect', 'Triangle', 'Arc'].includes(name)) {
+                    const props = name == 'Arc' ? { x: 300, y: 300, radius: 50 } : { x: 300, y: 300, width: 100, height: 200 }
+                    scene[name](props)
+                } else if (['revokeCanvas', 'recoverCanvas'].includes(name)) {
+                    console.log(scene);
+                    scene[name]()
+                } else {
+                    scene.setCanvasCursor('')
+                }
+
+                if (modelList.indexOf(name) >= 0) {
+                    scene.setModel(name)
+                }
+            })
+        }
+    </script>
+    <!-- <script>
+        const scene = new Two.drawiBoardBagua(document.createElement('canvas'),{ width: 800, height: 600 })
+        scene.closeRollerEvent()
+        // 矩形
+        // const rect = scene.Rect({ x: 200, y: 200, width: 100, height: 200 })
+        // // 三角形
+        // const triangle = scene.Triangle({ x: 200, y: 300, width: 200, height: 200 })
+        // // 箭头
+        // const arrow = scene.Arrow({ x: 200, y: 400, width: 200, height: 50 })
+        // // 圆
+        // const arc = scene.Arc({ x: 400, y: 400, radius: 50 })
+        // // 五角星
+        // const pentagram = scene.Pentagram({ x: 500, y: 500, radius: 50 })
+        
+        // const a = new Two.Arrow({ x: 250, y: 100, width: 200, height: 50, bgcolor: 'red' })
+        // const b = new Two.Arc({ x: 200, y: 200, radius: 50, bgcolor: 'blue' })
+        // const c = new Two.Pentagram({ x: 50, y: 50, radius: 50 })
+        // const group = scene.Group({
+        //     x: 450,
+        //     y: 200,
+        //     width: 300,
+        //     height: 300,
+        //     // overflow:'hide'
+        // })
+        // group.add(a)
+        // group.add(b)
+        // group.add(c)
+        // scene.render()
+        scene.import(JSON.parse(json))
+
+        const modelList = ['pen', 'normal', 'textarea']
         const utilBox = document.getElementsByClassName('ico-box')[0]
         utilBox.addEventListener('click', (e) => {
             if (!e.target) return false
             const name = e.target.id
+          
+            if (name == 'pen') {
+                scene.setCanvasCursor('./svg/pen.svg')
+            } else {
+                scene.setCanvasCursor('')
+            }
             if (modelList.indexOf(name) >= 0) {
+
                 scene.setModel(name)
             } else {
                 scene[name]()
@@ -65,7 +125,7 @@ dsd
         const app = document.querySelector('#app')
         window.scene = scene
         app.appendChild(scene.domElement)
-    </script>
+    </script> -->
 
 </body>
 

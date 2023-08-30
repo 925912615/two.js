@@ -1,8 +1,4 @@
-type historyData = {
-    name: string;
-    data: any;
-};
-export default class Stack {
+export default class Stack<T> {
     private steps;
     private steps_run;
     private history;
@@ -13,11 +9,10 @@ export default class Stack {
     private setHistory;
     back(): void;
     go(): void;
-    push(option: historyData): void;
+    push(option: T): void;
     pop(): void;
-    getCurrent(): historyData | null;
+    getCurrent(): T | null;
     clear(): void;
     getSteps(): number;
     getCurSteps(): number;
 }
-export {};

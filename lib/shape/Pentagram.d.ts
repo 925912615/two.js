@@ -1,20 +1,15 @@
 import Base from "./Base";
-type darwModel = 'fill' | 'stroke' | 'all';
-export interface RectProps {
+import { Props } from "src/types/shape";
+export interface PentagramProps {
     x: number;
     y: number;
-    width: number;
-    height: number;
+    radius: number;
     borderWidth?: number;
     borderColor?: string;
     bgcolor?: string;
-    model?: darwModel;
-    hollow?: boolean;
 }
 export default class extends Base {
-    model: darwModel;
-    hollow: boolean;
-    constructor(option: RectProps);
+    constructor(option: PentagramProps);
     draw(ctx: CanvasRenderingContext2D, osCtx: OffscreenCanvasRenderingContext2D): void;
+    setProps(option: Props): void;
 }
-export {};

@@ -1,6 +1,5 @@
 import Base from "./Base";
-type darwModel = 'fill' | 'stroke' | 'all';
-export interface RectProps {
+export interface ArrowProps {
     x: number;
     y: number;
     width: number;
@@ -8,13 +7,8 @@ export interface RectProps {
     borderWidth?: number;
     borderColor?: string;
     bgcolor?: string;
-    model?: darwModel;
-    hollow?: boolean;
 }
 export default class extends Base {
-    model: darwModel;
-    hollow: boolean;
-    constructor(option: RectProps);
+    constructor(option: ArrowProps);
     draw(ctx: CanvasRenderingContext2D, osCtx: OffscreenCanvasRenderingContext2D): void;
 }
-export {};

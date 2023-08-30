@@ -1,22 +1,36 @@
+import Arc, { ArcProps } from "src/shape/Arc";
+import Arrow, { ArrowProps } from "src/shape/Arrow";
+import BoxSelectFrame from "src/shape/BoxSelectFrame";
 import Erase from "src/shape/Erase";
-import Pen from "src/shape/Pen";
+import Group, { GroupProps } from "src/shape/Group";
+import Pen from "src/shape/pen";
+import Pentagram, { PentagramProps } from "src/shape/Pentagram";
+import Rect, { RectProps } from "src/shape/Rect";
 import Scene, { Option } from "src/shape/Scene";
 import Textarea from "src/shape/Textarea";
+import Triangle, { TriangleProps } from "src/shape/Triangle";
 import { darwModel } from "src/types/drawBoard";
 import { Props } from "src/types/shape";
 import Stack from "src/utils/Stack";
 export default class extends Scene {
-    history: Stack;
+    history: Stack<{
+        name: string;
+        data: Props[];
+    }>;
     model: darwModel;
     erase: Erase;
     pen: Pen;
     textarea: Textarea;
+    boxSelect: BoxSelectFrame;
     private scale;
     ratio: number;
     private offsetx;
     private offsety;
     private rollerEventfn;
-    constructor(option?: Option);
+    constructor(canvas: HTMLCanvasElement, option?: Option);
+    import(options: any): void;
+    export(): string;
+    animate(): void;
     setModel(type: darwModel): void;
     setHistory(): void;
     setShapes(): void;
@@ -60,5 +74,11 @@ export default class extends Scene {
      * 解绑canvas默认滚轮事件
      */
     closeRollerEvent(): void;
-    Rect(option: Props): void;
+    Rect(option: RectProps): Rect;
+    Triangle(option: TriangleProps): Triangle;
+    Arrow(option: ArrowProps): Arrow;
+    Arc(option: ArcProps): Arc;
+    Pentagram(option: PentagramProps): Pentagram;
+    Group(option: GroupProps): Group;
+    setCanvasCursor(url: string): void;
 }
